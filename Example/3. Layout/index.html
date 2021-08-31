@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Пример вёрстки</title>
+  <link rel="shortcut icon" type="ico" href="img/favicon.ico">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>&lt; &frasl; &gt; KMichael</span>
+    </div>
+    <div id="about">
+      <a href="#" title="О себе" onclick="slowScroll('#main')">О себе</a>
+      <a href="#" title="Портфолио" onclick="slowScroll('#overview')">Портфолио</a>
+      <a href="#" title="Контакты" onclick="slowScroll('#contacts')">Контакты</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>Коняев Михаил Евгеньевич</h1>
+    <h3>Web-разработчик, студент 4го курса</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>Немного о себе:</h2>
+      <span>Студент 4го курса Алтайского государственного технического университета им. И.И. Ползунова</span>
+    </div>
+    <div class="text">
+      <span>Знаю HTML, CSS, JS, JQuery, Bootstrap4, верстал сайты на Tilda. Начинал изучение WordPress и Joomla. Начинал изучение SCSS и SASS. Изучал flexbox и Grid. <br> Писал web-интерфейс (сайт) прибора по учебной практике с использованием MySQL, PHP, HTML, CSS, JQuery и JS.</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>Пример работ</h2>
+    <h4>Портфолио</h4>
+
+    <div class="img">
+      <img src="img/pic1.png" alt="Авто-масла">
+      <span>Сайт для фирмы авто-масел</span>
+    </div>
+    <div class="img1">
+      <img src="img/pic2.png" alt="Веб-интерфейс">
+      <span>Веб-интерфейс</span>
+    </div>
+  </div>
+
+  <div id="contacts">
+      <div class="intro">
+          <h2>Контакты</h2>
+        </div>
+  <div class="text">
+      <span>Почта: konyaev.784@gmail.com</span><br>
+    <span>Телефон: +7-996-706-76-97</span><br>
+    <span>Коняев М.Е</span><br></div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
